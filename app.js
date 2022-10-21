@@ -1,9 +1,13 @@
-const write = require ('./write')
-const read = require ('./read')
 const add = require ('./add')
+const read = require ('./read')
+const write = require ('./write')
+const present = require ('./present')
+const del = require ('./del')
 //get user input
 const data = process.argv
+
 var note = {}
+
 if (data[2] =='add'){
     //build object
     note = {
@@ -17,7 +21,15 @@ if (data[2] =='add'){
     add(note,oldNote)
 }
 if (data[2] == 'read'){
-    // import present 
+    //import present 
     const present = require('./present')
+   present(read())
+} 
+if(data[2] == 'delete'){
+    //get oldNote values
+    const oldNote = read()
+    //get id to delete from note
+    const id = data[3]
+    del(id,oldNote)
     present (read())
 }
