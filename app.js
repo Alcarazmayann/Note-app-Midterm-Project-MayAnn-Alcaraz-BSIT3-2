@@ -1,2 +1,2 @@
-const fs = require ('fs');
-fs.writeFileSync('note.txt', "Hi");
+const write = require ('./write');
+write("Hello")
