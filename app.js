@@ -1,2 +1,3 @@
 const write = require ('./write');
-write("Hello")
+const cmd = process.argv[2];
+write(cmd);
